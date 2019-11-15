@@ -18,7 +18,7 @@ class Pessoa(db.Model):
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
 
 
-class PessoaSchema(ma.ModelSchema):
+class PessoaSchema(ma.Schema):
     class Meta:
         fields = (
             "id",
@@ -36,7 +36,3 @@ def __init__(self, nome_pessoa, email, nr_documento, id_endereco):
     self.email = email
     self.nr_documento = nr_documento
     self.id_endereco = id_endereco
-
-
-def __repr__(self):
-    return "<nome %r " % self.nome_pessoa

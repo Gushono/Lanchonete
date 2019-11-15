@@ -20,3 +20,6 @@ app/models/__pycache__/__init__.cpython-37.pyc
 app/controllers/__pycache__/__init__.cpython-37.pyc
 app/controllers/__pycache__/home.cpython-37.pyc
 app/controllers/__pycache__/pessoa_controller.cpython-37.pyc
+app/repository/__pycache__/
+app/utils/__pycache__/__init__.cpython-37.pyc
+app/utils/__pycache__/util.cpython-37.pyc

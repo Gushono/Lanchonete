@@ -1,3 +1,5 @@
+import json
+
 from flask import jsonify
 from sqlalchemy.orm.collections import InstrumentedList
 
@@ -17,8 +19,10 @@ def serialize_entidade(entidade, entidade_schema, apply_jsonify=True):
         else entidade_schema()
     )
     output = (
-        jsonify(schema.dump(entidade).data)
-        if apply_jsonify
-        else schema.dump(entidade).data
+        jsonify(schema.dump(entidade))
+        if
+        apply_jsonify
+        else
+        schema.dump(entidade)
     )
     return output
