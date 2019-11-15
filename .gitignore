@@ -23,3 +23,6 @@ app/controllers/__pycache__/pessoa_controller.cpython-37.pyc
 app/repository/__pycache__/
 app/utils/__pycache__/__init__.cpython-37.pyc
 app/utils/__pycache__/util.cpython-37.pyc
+app/models/__pycache__/Perfil.cpython-37.pyc
+app/models/__pycache__/Permissao_perfil.cpython-37.pyc
+app/models/__pycache__/Permissoes.cpython-37.pyc
