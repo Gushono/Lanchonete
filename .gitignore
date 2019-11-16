@@ -26,3 +26,4 @@ app/utils/__pycache__/util.cpython-37.pyc
 app/models/__pycache__/Perfil.cpython-37.pyc
 app/models/__pycache__/Permissao_perfil.cpython-37.pyc
 app/models/__pycache__/Permissoes.cpython-37.pyc
+app/models/__pycache__/
