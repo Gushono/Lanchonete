@@ -1,6 +1,6 @@
-from app.models.Pessoa import Pessoa, PessoaSchema
+from app.models.Pessoa import Pessoa
 from app.repository import base_repository
-from app.repository.pessoa_repository import pessoa_por_id
+from app.repository.base_repository import retorna_objeto_por_id, retorna_todos_objetos
 
 
 def cadastra_pessoa_service(pessoa_dto):
@@ -16,7 +16,12 @@ def cadastra_pessoa_service(pessoa_dto):
     return pessoa
 
 
-def recebe_pessoa_service(id_pessoa):
-    pessoa = pessoa_por_id(id_pessoa)
+def lista_pessoa_service():
+    pessoas = base_repository.retorna_todos_objetos(Pessoa)
+    return pessoas
+
+
+def recebe_pessoa_por_id_service(id_pessoa):
+    pessoa = retorna_objeto_por_id(Pessoa, id_pessoa)
 
     return pessoa

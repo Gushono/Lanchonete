@@ -8,12 +8,17 @@ from app.utils.util import serialize_entidade
 
 @app.route("/pessoa", methods=["POST"])
 def criar_pessoa():
-
     pessoa = pessoa_service.cadastra_pessoa_service(request.get_json())
     return serialize_entidade(pessoa, PessoaSchema), 201
 
 
+@app.route("/pessoa", methods=["GET"])
+def listar_pessoas():
+    pessoa = pessoa_service.lista_pessoa_service()
+    return serialize_entidade(pessoa, PessoaSchema), 200
+
+
 @app.route("/pessoa/<id_pessoa>", methods=["GET"])
 def pessoa_por_id(id_pessoa):
-    pessoa = pessoa_service.recebe_pessoa_service(id_pessoa)
+    pessoa = pessoa_service.recebe_pessoa_por_id_service(id_pessoa)
     return serialize_entidade(pessoa, PessoaSchema), 200
