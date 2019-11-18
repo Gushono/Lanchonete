@@ -1,6 +1,6 @@
 from app.models.Pessoa import Pessoa
 from app.models.Usuario import Usuario
-from app.models.exceptions import InvalidUsage
+from app.models.exceptions import PadraoException
 from app.repository import base_repository
 from app.repository.usuario_repository import verifica_existencia_usuario_repository
 
@@ -9,7 +9,7 @@ def cadastra_usuario_service(usuario_dto):
     verificacao = verifica_existencia_usuario_repository(usuario_dto['email'])
 
     if verificacao:
-        raise InvalidUsage('Impossível cadastrar um usuário com um email já cadastrado', 422)
+        raise PadraoException('Impossível cadastrar um usuário com um email já cadastrado', 422)
     pessoa = Pessoa()
     usuario = Usuario()
 
@@ -38,3 +38,5 @@ def recebe_usuario_por_id_service(id_usuario):
     usuario = base_repository.retorna_objeto_por_id(Usuario, id_usuario)
 
     return usuario
+
+
