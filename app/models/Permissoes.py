@@ -18,9 +18,7 @@ class PermissoesSchema(ma.Schema):
     class Meta:
         fields = (
             "id",
-            "nome_permissao",
-            "created_at",
-            "updated_at"
+            "nome_permissao"
         )
 
 

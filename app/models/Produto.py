@@ -18,6 +18,7 @@ class Produto(db.Model):
 
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
     updated_at = db.Column(DateTime(timezone=True), onupdate=func.now())
+    updated_by = db.Column(db.String)
 
 
 class ProdutoSchema(ma.Schema):

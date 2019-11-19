@@ -1,9 +1,8 @@
-from flask_marshmallow import fields
+from marshmallow import fields
 from sqlalchemy import DateTime
 from sqlalchemy.sql import func
 
 from app import db, ma
-from app.models.Perfil import PerfilSchema
 from app.models.Permissoes import PermissoesSchema
 
 
@@ -23,14 +22,13 @@ class PermissaoPerfil(db.Model):
 
 
 class PermissaoPerfilSchema(ma.Schema):
+    permissoes = fields.Nested(PermissoesSchema)
 
     class Meta:
         fields = (
             "id",
-            "perfil",
-            "permissoes",
-            "created_at",
-            "updated_at"
+            "id_perfil",
+            "permissoes"
         )
 
 
