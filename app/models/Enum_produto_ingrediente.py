@@ -6,7 +6,7 @@ from app import db, ma
 
 
 class EnumProdutoIngrediente(db.Model):
-    __tablename__ = 'tb_enum_produto_ingreditente'
+    __tablename__ = 'tb_enum_produto_ingrediente'
 
     id = db.Column(db.Integer, primary_key=True)
     nome_enum = db.Column(db.String)

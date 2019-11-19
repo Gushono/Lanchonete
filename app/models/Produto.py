@@ -13,7 +13,7 @@ class Produto(db.Model):
     qtd_produto = db.Column(db.Integer)
     preco_venda_unidade = db.Column(db.Float)
 
-    enum_produto_ingrediente = db.Column('id_tipo', db.Integer, db.ForeignKey("tb_enum_produto_ingreditente.id"))
+    enum_produto_ingrediente = db.Column('id_tipo', db.Integer, db.ForeignKey("tb_enum_produto_ingrediente.id"))
     produto_ingrediente = db.relationship('EnumProdutoIngrediente', foreign_keys=[enum_produto_ingrediente])
 
     created_at = db.Column(DateTime(timezone=True), server_default=func.now())
